@@ -7,9 +7,9 @@ Create the attribute for the class
      [TestCaseOrderer("Hydra.Tests.Core.Order.PriorityOrderer", "Hydra.Tests.Core.Order")]
 ```
 
-The n Define for each method the priority, by setting a value:
+Then define for each method the priority, by setting a value:
 ```c#
-     [Fact(DisplayName = "Method"), TestPriority(1)]
+    [Fact(DisplayName = "Method"), TestPriority(1)]
     public void Method()
     {
         ...
