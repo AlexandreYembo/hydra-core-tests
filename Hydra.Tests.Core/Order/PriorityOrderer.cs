@@ -16,7 +16,7 @@ namespace Hydra.Tests.Core.Order
             {
                 var priority = 0;
 
-                foreach (var attr in testCase.TestMethod.Method.GetCustomAttributes((typeof(PriorityTestAttribute).AssemblyQualifiedName)))
+                foreach (var attr in testCase.TestMethod.Method.GetCustomAttributes((typeof(TestPriorityAttribute).AssemblyQualifiedName)))
                     priority = attr.GetNamedArgument<int>("Priority");
 
                 GetOrCreate(sortedMethods, priority).Add(testCase);

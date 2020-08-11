@@ -3,10 +3,10 @@ using System;
 namespace Hydra.Tests.Core.Order
 {
     [AttributeUsage(AttributeTargets.Method)]
-    public class PriorityTestAttribute : Attribute
+    public class TestPriorityAttribute : Attribute
     {
         public int Priority { get; }
-        public PriorityTestAttribute(int priority)
+        public TestPriorityAttribute(int priority)
         {
             Priority = priority;
         }
