@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydra.Tests.Core", "Hydra.Tests.Core\Hydra.Tests.Core.csproj", "{43BF3AF7-8CFD-4784-8AFE-3CA75E72BD4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydra.Core.Tests.Extensions", "Hydra.Core.Tests.Extensions\Hydra.Core.Tests.Extensions.csproj", "{7250E4F7-5808-4154-AFB5-C70455C68B37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{43BF3AF7-8CFD-4784-8AFE-3CA75E72BD4B}.Release|x64.Build.0 = Release|Any CPU
 		{43BF3AF7-8CFD-4784-8AFE-3CA75E72BD4B}.Release|x86.ActiveCfg = Release|Any CPU
 		{43BF3AF7-8CFD-4784-8AFE-3CA75E72BD4B}.Release|x86.Build.0 = Release|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Debug|x64.Build.0 = Debug|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Debug|x86.Build.0 = Debug|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Release|x64.ActiveCfg = Release|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Release|x64.Build.0 = Release|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Release|x86.ActiveCfg = Release|Any CPU
+		{7250E4F7-5808-4154-AFB5-C70455C68B37}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
