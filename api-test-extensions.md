@@ -26,9 +26,10 @@ After creating the ObjectResultMap you can simple call the extension inside your
 ```c#
 var responseAssert = new BadRequestObjectResultMap(response);
 
-            var expectedErrors = new List<string>{
-                "Invalid request"
-            };
+var expectedErrors = new List<string>
+{
+  "Invalid request"
+};
 
-            responseAssert.IsInvalidRequest(expectedErrors);
+responseAssert.IsInvalidRequest(expectedErrors);
 ```
