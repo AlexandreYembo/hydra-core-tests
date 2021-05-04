@@ -1,15 +1,15 @@
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 
-namespace Hydra.Tests.Core.Selenium.Helpers
+namespace Hydra.Tests.Selenium
 {
     public static class WebDriverFactory
     {
         public static IWebDriver CreateWebDriver(Browser browser, string driverPath, bool headless)
         {
             IWebDriver webDriver = null;
-            
+
             switch (browser)
             {
                 case Browser.Firefox:

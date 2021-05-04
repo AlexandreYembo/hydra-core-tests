@@ -1,6 +1,6 @@
 using System;
 
-namespace Hydra.Tests.Core.Order
+namespace Hydra.Core.Tests.Order
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class TestPriorityAttribute : Attribute

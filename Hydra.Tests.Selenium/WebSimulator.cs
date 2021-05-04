@@ -1,43 +1,24 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
-namespace Hydra.Tests.Core.Selenium.Helpers
+namespace Hydra.Tests.Selenium
 {
-    public class SeleniumHelper : IDisposable
+    public class WebSimulator : IDisposable
     {
         public IWebDriver WebDriver;
-        public readonly ConfigurationHelper _configuration;
+        public readonly AppSettings _appSettings;
         public WebDriverWait Wait;
 
-        public SeleniumHelper(Browser browser, ConfigurationHelper configuration){
-            _configuration = configuration;
-            WebDriver = WebDriverFactory.CreateWebDriver(browser, _configuration.WebDrivers, _configuration.Headless);
+        public WebSimulator(Browser browser, AppSettings appSettings)
+        {
+            _appSettings = appSettings;
+            WebDriver = WebDriverFactory.CreateWebDriver(browser, _appSettings.WebDrivers, _appSettings.Headless);
             Wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(30));
         }
-
-
-        /// <summary>
-        /// The the URI
-        /// </summary>
-        /// <returns></returns>
-        public string GetUrl() => WebDriver.Url;
-
-        /// <summary>
-        /// Navigate to a specific url
-        /// </summary>
-        /// <param name="url"></param>
-        public void GoToUrl(string url) => WebDriver.Navigate().GoToUrl(url);
-
-        /// <summary>
-        /// Validate the container returned from the URL
-        /// It will wait for 30 seconds configured in the constructor
-        /// </summary>
-        /// <param name="container"></param>
-        public void ValidateUrlContainer(string container) => Wait.Until(ExpectedConditions.UrlContains(container));
 
         /// <summary>
         /// click event by LinkText
@@ -66,21 +47,21 @@ namespace Hydra.Tests.Core.Selenium.Helpers
         /// </summary>
         /// <param name="className"></param>
         /// <returns></returns>
-        public IWebElement GetElementByClass(string className) =>  Wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName(className)));
+        public IWebElement GetElementByClass(string className) => Wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName(className)));
 
         /// <summary>
         /// Get element by xPath
         /// </summary>
         /// <param name="xPath"></param>
         /// <returns></returns>
-        public IWebElement GetElementByXPath(string xPath) =>  Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(xPath)));
-    
+        public IWebElement GetElementByXPath(string xPath) => Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(xPath)));
+
         /// <summary>
         /// Get element by Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public IWebElement GetElementById(string id) =>  Wait.Until(ExpectedConditions.ElementIsVisible(By.Id(id)));
+        public IWebElement GetElementById(string id) => Wait.Until(ExpectedConditions.ElementIsVisible(By.Id(id)));
 
 
         /// <summary>
@@ -94,13 +75,13 @@ namespace Hydra.Tests.Core.Selenium.Helpers
             var selectElement = new SelectElement(field);
             selectElement.SelectByValue(value);
         }
-        
+
         /// <summary>
         /// Get element text by Css class
         /// </summary>
         /// <param name="className"></param>
         /// <returns></returns>
-        public string  GetElementTextByClass(string className) => Wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName(className))).Text;
+        public string GetElementTextByClass(string className) => Wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName(className))).Text;
 
         /// <summary>
         /// Get elememt text by Id
@@ -114,7 +95,7 @@ namespace Hydra.Tests.Core.Selenium.Helpers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public string GetTextBoxValueById(string id) =>  Wait.Until(ExpectedConditions.ElementIsVisible(By.Id(id)))
+        public string GetTextBoxValueById(string id) => Wait.Until(ExpectedConditions.ElementIsVisible(By.Id(id)))
                                                              .GetAttribute("value");
 
         /// <summary>
@@ -157,7 +138,7 @@ namespace Hydra.Tests.Core.Selenium.Helpers
         /// <param name="fileName"></param>
         private void SaveScreenShot(Screenshot screenshot, string fileName)
         {
-            screenshot.SaveAsFile($"{_configuration.FolderPicture}{fileName}", ScreenshotImageFormat.Png);
+            screenshot.SaveAsFile($"{_appSettings.FolderPicture}{fileName}", ScreenshotImageFormat.Png);
         }
 
         /// <summary>

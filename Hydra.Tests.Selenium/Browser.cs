@@ -1,4 +1,4 @@
-namespace Hydra.Tests.Core.Selenium
+﻿namespace Hydra.Tests.Selenium
 {
     public enum Browser
     {

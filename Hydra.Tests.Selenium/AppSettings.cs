@@ -1,13 +1,13 @@
-using System.IO;
+﻿using System.IO;
 using Microsoft.Extensions.Configuration;
 
-namespace Hydra.Tests.Core.Selenium.Helpers
+namespace Hydra.Tests.Selenium
 {
-    public class ConfigurationHelper
+    public class AppSettings
     {
         private readonly IConfiguration _config;
 
-        public ConfigurationHelper()
+        public AppSettings()
         {
             _config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
@@ -18,6 +18,5 @@ namespace Hydra.Tests.Core.Selenium.Helpers
         public string FolderPath => Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
         public string FolderPicture => $"{FolderPath}{_config.GetSection("FolderPicture").Value}";
         public bool Headless => bool.Parse(_config.GetSection("Headless").Value);
-
     }
 }

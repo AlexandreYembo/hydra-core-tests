@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace Hydra.Core.Api.Tests.Extensions
@@ -15,12 +14,12 @@ namespace Hydra.Core.Api.Tests.Extensions
         /// <typeparam name="T"></typeparam>
         public static void IsInvalidRequest<T>(this T actionResult, List<string> expectedErrors) where T : IRequestResultAssertion
         {
-            ReturnFourHundredCode(actionResult);
+            Return400Code(actionResult);
             Assert.True(actionResult.ErrorMessages.Count > 0);
             Assert.Equal(actionResult.ErrorMessages, expectedErrors);
         }
 
-        private static void ReturnFourHundredCode<T>(T actionResult) where T : IRequestResultAssertion =>
+        private static void Return400Code<T>(T actionResult) where T : IRequestResultAssertion =>
             Assert.Equal(400, actionResult.ErrorCode);
     }
 }

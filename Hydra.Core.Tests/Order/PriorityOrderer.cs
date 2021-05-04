@@ -4,7 +4,7 @@ using System.Linq;
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
-namespace Hydra.Tests.Core.Order
+namespace Hydra.Core.Tests.Order
 {
     public class PriorityOrderer : ITestCaseOrderer
     {
