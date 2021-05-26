@@ -19,11 +19,10 @@ jobs:
       working-directory: dotnet3.1
     - name: Build
       run: dotnet build --configuration Release --no-restore /p:Version=1.0.0-stage
-      working-directory: dotnet3.1
     - name: Publish Hydra.Core.Tests
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-          PROJECT_FILE_PATH: dotnet3.1/Framework/Hydra.Core.Tests/Hydra.Core.Tests.csproj
+          PROJECT_FILE_PATH: Hydra.Core.Tests/Hydra.Core.Tests.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           PACKAGE_NAME: Hydra.Core.Tests
           NUGET_SOURCE: https://api.nuget.org
