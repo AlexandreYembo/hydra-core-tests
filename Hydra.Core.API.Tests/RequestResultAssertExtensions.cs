@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Xunit;
 
-namespace Hydra.Core.Api.Tests.Extensions
+namespace Hydra.Core.API.Tests
 {
     public static class RequestResultAssertExtensions
     {

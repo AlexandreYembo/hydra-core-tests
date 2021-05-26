@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>Hydra.Core.API.Tests</PackageId>
+    <IsPackable>true</IsPackable>
+    <Authors>Alexandre Yembo</Authors>
+    <Company>Hydra</Company>
+    <PackageDescription>Test library for API</PackageDescription>
+    <RepositoryUrl>https://github.com/AlexandreYembo/hydra-tests-core</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hydra.Tests.Fixtures\Hydra.Tests.Fixtures.csproj" />
+  </ItemGroup>
+
+</Project>

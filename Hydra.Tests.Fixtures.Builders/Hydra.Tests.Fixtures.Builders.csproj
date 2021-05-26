@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+ <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>Hydra.Core.Tests.Fixtures.Builders</PackageId>
+    <IsPackable>true</IsPackable>
+    <Authors>Alexandre Yembo</Authors>
+    <Company>Hydra</Company>
+    <PackageDescription>Test Fixtures library</PackageDescription>
+    <RepositoryUrl>https://github.com/AlexandreYembo/hydra-tests-core</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
