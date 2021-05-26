@@ -2,10 +2,9 @@
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
+	   <Version>1.0.0-beta-210526</Version>
 	</PropertyGroup>
-
 	<ItemGroup>
 	  <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
 	</ItemGroup>
-
 </Project>
