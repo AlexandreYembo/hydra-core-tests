@@ -19,7 +19,6 @@ jobs:
       working-directory: dotnet3.1
     - name: Build
       run: dotnet build --configuration Release --no-restore /p:Version=1.0.0-stage
-      working-directory: dotnet3.1
     - name: Publish Hydra.Core.Tests
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
